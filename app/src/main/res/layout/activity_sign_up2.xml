@@ -7,6 +7,106 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="neu.laothongsan.krit.bookshop.SignUp2Activity">
+    tools:context="neu.laothongsan.krit.bookshop.SignUp2Activity"
+    android:background="@drawable/wall20">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/signup"
+        android:id="@+id/textView"
+        android:textSize="@dimen/h1"
+        android:textColor="#f7f8043d"
+        android:textIsSelectable="false"
+        android:layout_marginTop="21dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textColorHighlight="#ffffff"
+        android:textStyle="bold"
+        android:singleLine="false" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/signup"
+        android:id="@+id/button3"
+        android:layout_alignParentBottom="true"
+        android:textColor="#e51a1a"
+        android:onClick="clicKSignUpSign" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/textView"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_above="@+id/button3">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Name:"
+                android:id="@+id/textView2"
+                android:textSize="@dimen/h2"
+                android:layout_weight="1"
+                android:textColor="#0a0202"
+                android:textStyle="bold" />
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/editText"
+                android:layout_weight="2" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="User:"
+                android:id="@+id/textView3"
+                android:textSize="@dimen/h2"
+                android:layout_weight="1"
+                android:textColor="#0a0202"
+                android:textStyle="bold" />
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/editText2"
+                android:layout_weight="2" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Password:"
+                android:id="@+id/textView4"
+                android:textSize="@dimen/h2"
+                android:layout_weight="1"
+                android:textColor="#0a0202"
+                android:textStyle="bold" />
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/editText3"
+                android:layout_weight="2" />
+        </LinearLayout>
+    </LinearLayout>
 </RelativeLayout>
