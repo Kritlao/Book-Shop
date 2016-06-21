@@ -32,7 +32,7 @@
         android:id="@+id/button3"
         android:layout_alignParentBottom="true"
         android:textColor="#e51a1a"
-        android:onClick="clicKSignUpSign" />
+        android:onClick="clickSignUpSign" />
 
     <LinearLayout
         android:orientation="vertical"

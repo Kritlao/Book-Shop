@@ -1,10 +1,22 @@
 package neu.laothongsan.krit.bookshop;
 
+import android.graphics.Paint;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.EditText;
+
+import com.squareup.okhttp.Call;
+import com.squareup.okhttp.Callback;
+import com.squareup.okhttp.FormEncodingBuilder;
+import com.squareup.okhttp.OkHttpClient;
+import com.squareup.okhttp.Request;
+import com.squareup.okhttp.RequestBody;
+import com.squareup.okhttp.Response;
+import com.squareup.okhttp.internal.http.OkHeaders;
+
+import java.io.IOException;
 
 public class SignUp2Activity extends AppCompatActivity {
 
@@ -27,7 +39,7 @@ public class SignUp2Activity extends AppCompatActivity {
 
     } //Main Method
 
-    public void clicKSignUpSign(View view) {
+    public void clickSignUpSign(View view) {
 
         nameSting = nameEditText.getText().toString().trim();
         userSting = userEditText.getText().toString().trim();
@@ -41,7 +53,7 @@ public class SignUp2Activity extends AppCompatActivity {
 
         } else {
             // NO Space
-            uploadToServer();
+           uploadToServer();
 
 
         }
@@ -52,6 +64,29 @@ public class SignUp2Activity extends AppCompatActivity {
 
     private void uploadToServer() {
 
-    }
+        OkHttpClient okHttpClient = new OkHttpClient();
+        RequestBody requestBody = new FormEncodingBuilder()
+                .add("isAdd", "true")
+                .add("Name", nameSting)
+                .add("User", userSting)
+                .add("Password", passwordSting)
+                .build();
+        Request.Builder builder = new Request.Builder();
+        Request request = builder.url(urlPHP).post(requestBody).build();
+        Call call = okHttpClient.newCall(request);
+        call.enqueue(new Callback() {
+            @Override
+            public void onFailure(Request request, IOException e) {
+
+            }
+
+            @Override
+            public void onResponse(Response response) throws IOException {
+               finish();
+            }
+        });
+
+
+    } //upload
 
 }  //Main Class
